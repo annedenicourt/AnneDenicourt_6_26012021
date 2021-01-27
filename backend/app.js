@@ -6,13 +6,18 @@ const helmet = require("helmet");
 const sauceRoutes = require('./routes/sauce');
 const userRoutes = require('./routes/user');
 const path = require('path');
+require('dotenv').config();
 
-mongoose.connect('mongodb+srv://annedenicourt:anitaoui@cluster0.l4vs4.mongodb.net/test?retryWrites=true&w=majority',
-//mongoose.connect(`mongodb+srv://${process.env.USERNAME_DB}:${process.env.PASSWORD_DB}@${process.env.CLUSTER_DB}.l4vs4.mongodb.net/${process.env.DATA_BASE_NAME}?retryWrites=true&w=majority`,
+
+//mongoose.connect('mongodb+srv://annedenicourt:anitaoui@cluster0.l4vs4.mongodb.net/test?retryWrites=true&w=majority',
+mongoose.connect(`mongodb+srv://${process.env.USER_DB}:${process.env.PASSWORD_DB}@${process.env.CLUSTER_DB}.l4vs4.mongodb.net/${process.env.DATA_BASE_NAME}?retryWrites=true&w=majority`,
   { useNewUrlParser: true,
     useUnifiedTopology: true })
   .then(() => console.log('Connexion à MongoDB réussie !'))
   .catch(() => console.log('Connexion à MongoDB échouée !'));
+
+const essai = `mongodb+srv://${process.env.USER_DB}:${process.env.PASSWORD_DB}${process.env.CLUSTER_DB}/${process.env.DATA_BASE_NAME}?retryWrites=true&w=majority`
+console.log(essai)
 
 
 const app = express();
