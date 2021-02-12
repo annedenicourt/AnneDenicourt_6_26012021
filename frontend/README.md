@@ -1,6 +1,6 @@
 ## Piquante
 
-Le projet a été généré avec [Angular CLI](https://github.com/angular/angular-cli) version 7.0.2.
+La partie frontend a été générée avec [Angular CLI](https://github.com/angular/angular-cli) version 7.0.2.
 
 Pour faire fonctionner le projet, vous devez installer node-sass à part.
 
